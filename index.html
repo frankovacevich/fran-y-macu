@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="style.css?1453">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <title>Nos casamos!</title>
+</head>
+<body>
+    
+    <div id="full-screen-container">
+        <div id="pane1" style="position: relative; overflow: hidden">
+            <img id="pane1_1" src="images/flowers.png"style="position: absolute; top: 0; left: 0; width: 300px; transform: translate(25%, -44%) rotate(-106deg);">
+            <img id="pane1_2" src="images/flowers.png"style="position: absolute; z-index: 0; bottom: 0; right: 0; width: 300px; transform: translate(-30%, 30%) rotate(-90deg);">
+            <img id="pane1_3" src="images/flowers.png"style="position: absolute; z-index: 0; bottom: 0; right: 0; width: 300px; transform: translate(70%, 29%) rotate(-25deg) scaleX(-1);">
+
+            <div id="pane1_4" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <img src="images/macafran.svg" style="width: 110%; margin-bottom: 80px; max-width: 500px; z-index: 99;" >
+            </div>
+
+            <img src="images/block.png" style="position: absolute; bottom: -140px; left:0; width: 100%; height: 350px; object-fit: cover;">
+        </div>
+
+        <div id="pane2">
+
+            <div>
+                <div class="calendar">
+                    <table>
+                        <tr style="padding-bottom: 10px;">
+                            <td colspan="7" style="letter-spacing: 12px; padding-right: 0px">
+                                <b>ENERO | 2024</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>L</td>
+                            <td>M</td>
+                            <td>M</td>
+                            <td>J</td>
+                            <td>V</td>
+                            <td>S</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td style="padding: 0; position: relative;">
+                                <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" style="margin-top:3px; margin-left:1px" class="fa-spin">
+                                    <path d="M 15.993859,1.0619236 A 14.937632,14.937632 0 0 1 30.902281,14.963042 14.937632,14.937632 0 0 1 18.061951,30.794279 14.937632,14.937632 0 0 1 1.3832204,19.075828 14.937632,14.937632 0 0 1 11.924038,1.6289574" style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"/>
+                                </svg>
+                                <span style="position: absolute; left: 13px; top: 13px;">20</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div id="faltan_dias" style="margin-top: 50px; font-family: 'Nothing You Could Do', cursive; font-size: 24pt"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="pane3">
+            <img src="images/block.png" style="position: absolute; top: -200px; left:0; width: 100%; height: 400px; object-fit: cover;">
+            <div class="nos-casamos-lo-celebramos-container">
+
+                <div style="flex-grow: 1; margin-bottom: 100px">
+                    
+                    <div style="width: 80%; min-width: 280px; text-align: right;">
+                        <img id="pane3_1" src="images/nos_casamos.svg" style="height: 120px;">
+                        <div id="pane3_2" style="height: 3px; width: 100%; background-color: black; transform: translateY(-60px);"></div>
+                    </div>
+
+                    <div id="pane3_3" style="display: flex; flex-direction: column; width: 100%; justify-content: center; align-items: center;">
+                        <div style="width: 80%">
+                            <a href="https://maps.app.goo.gl/7SA5UB65nLnsyuCv7"><img src="images/map1.png?12" style="width: 180px; height: 180px; border-radius: 50%; margin-left: auto; margin-right: auto;"></a>
+                        </div>
+                        <div style="width: 80%; margin-top: 10px">
+                            <p>19:00 horas</p>
+                            <p>Capilla "Nuestra Señora de Itati"</p>
+                            <p>Islas Malvinas esq. Rivadavia</p>
+                            <p>Franck, Santa Fe</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div style="flex-grow: 1; margin-bottom: 200px">
+                    
+                    <div style="width: 80%; min-width: 290px; text-align: left; margin-left: auto;">
+                        <img id="pane3_4" src="images/lo_celebramos.svg" style="height: 120px; transform: translateY(-9px);">
+                        <div id="pane3_5" style="height: 3px; width: 100%; background-color: black; transform: translateY(-60px);"></div>
+                    </div>
+
+                    <div id="pane3_6" style="display: flex; flex-direction: column; width: 100%; justify-content: center; align-items: center;">
+                        <div style="width: 80%">
+                            <a href="https://maps.app.goo.gl/GGynYZCuF5MY9SR19"><img src="images/map2.png?12" style="width: 180px; height: 180px; border-radius: 50%; margin-left: auto; margin-right: auto;"></a>
+                        </div>
+                        <div style="width: 80%; margin-top: 10px">
+                            <p>20:30 horas</p>
+                            <p>Salón "La Colonia"</p>
+                            <p>Ruta Nacional 19</p>
+                            <p>Colonia San José, Santa Fe</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="pane4">
+
+            <div style="width: 100%; height: 500px; margin-left: auto; margin-right: auto; position: relative; background-image: url(images/mancha.png); background-size: 100% 100%; display: flex; align-items: center; justify-content: center;">
+                <div style="margin-left: 130px; width: 60%; padding-bottom: 60px; z-index: 99;">
+                    <img src="images/confirmar_asistencia.svg" style="width: 100%;">
+                    <p style="transform: translateY(-35px); font-size: 14pt;">antes del 6 de Enero</p>
+                    <p>
+                        <a href="https://wa.me/+310627338225">Francisco</a><br>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://wa.me/+310627338225" style="text-decoration: underline;">+31 06 27 33 82 25</a>
+                    </p>
+                    <p>
+                        <a href="https://wa.me/+310627279524">Macarena</a><br>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://wa.me/+310627279524" style="text-decoration: underline;">+31 06 27 27 95 24</a>
+                    </p>
+                </div>
+            </div>
+            <img src="images/flowers.png" style="position: absolute; z-index: 0; bottom: 0; left: 0; width: 300px; transform: translate(-50%, 0%) rotate(7deg) scaleX(-1)">
+            <img src="images/block.png" style="position: absolute; bottom: -140px; left:0; width: 100%; height: 350px; object-fit: cover; transform: scale(1, -1)">
+            
+        </div>
+
+        <div id="pane5">
+            <div style="height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column;">                
+                <img id="pane5_1" src="images/el_mejor_regalo.svg" style="height: 120px;"></img>
+                <p id="pane5_2" style="color: white; font-size: 12pt;">es tu compañía</p>
+            </div>
+        </div>
+
+        <div id="pane6">
+            <img src="images/block.png" style="position: absolute; top: -200px; left:0; width: 100%; height: 400px; object-fit: cover; transform: scale(-1, -1);">
+            <img id="pane6_1" src="images/f_m.svg" style="position: absolute; bottom: 0; width: 300px; transform: translate(-50%, 13px) scale(0.5)">
+            <img id="pane6_2" src="images/flowers.png" style="position: absolute; bottom: 0; width: 300px; transform: translate(-168%, 45%) rotate(90deg) scaleX(-1)">
+            <img id="pane6_3" src="images/flowers.png" style="position: absolute; bottom: 0; width: 300px; transform: translate(68%, 45%) rotate(-90deg)">
+        </div>
+       
+    </div>
+</body>
+
+<script>
+    /*
+    * Calendario
+    */
+    const fechaCasamiento = new Date('2024-01-20');
+    setInterval(() => {
+        var d = Math.floor((fechaCasamiento - (new Date())) / (1000 * 60 * 60 * 24));    
+        document.getElementById("faltan_dias").innerHTML = `Faltan ${d} días!`;
+    }, 1000);
+
+    /*
+    * Animaciones
+    */
+    function elemInView(elem){        
+        const rect = elem.getBoundingClientRect();
+        return (rect.top + rect.bottom) / 2 < window.innerHeight;
+    }
+
+    function fadeInWhenInView(elemId, order=1){
+        const elem = document.getElementById(elemId);
+        elem.style.opacity = 0;
+        if(elemInView(elem)){
+            elem.classList.add("fadein" + order);
+        }
+    }
+
+    function addAnimation(){
+        fadeInWhenInView("pane1_1", 1);
+        fadeInWhenInView("pane1_2", 1);
+        fadeInWhenInView("pane1_3", 1);
+        fadeInWhenInView("pane1_4", 2);
+
+        fadeInWhenInView("pane3_1", 2);
+        fadeInWhenInView("pane3_2", 1);
+        fadeInWhenInView("pane3_3", 3);
+        fadeInWhenInView("pane3_4", 2);
+        fadeInWhenInView("pane3_5", 1);
+        fadeInWhenInView("pane3_6", 3);
+
+        fadeInWhenInView("pane5_1", 1);
+        fadeInWhenInView("pane5_2", 2);
+
+        fadeInWhenInView("pane6_1", 1);
+        fadeInWhenInView("pane6_2", 1);
+        fadeInWhenInView("pane6_3", 1);
+    }   
+
+    window.addEventListener("scroll", addAnimation);
+    window.addEventListener("load", addAnimation);
+        
+</script>
+  
+
+</html>
