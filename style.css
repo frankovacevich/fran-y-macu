@@ -82,14 +82,14 @@ Panels
     }
 }
 
-.big{
-    font-size: 30pt;
+.flower-resize{
+    width: 300px;
 }
 
-.content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+@media screen and (max-height: 700px) {
+    .flower-resize{
+        width: 200px;
+    }
 }
 
 #pane1{
