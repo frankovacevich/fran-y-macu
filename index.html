@@ -105,7 +105,7 @@
                             <td></td>
                         </tr>
                     </table>
-                    <div id="faltan_dias" style="margin-top: 50px; font-size: 18pt;"></div>
+                    <div id="faltan_dias" style="margin-top: 50px; font-size: 16pt;"></div>
                 </div>
             </div>
 
@@ -211,7 +211,7 @@
     const fechaCasamiento = new Date('2024-01-20');
     setInterval(() => {
         var d = Math.floor((fechaCasamiento - (new Date())) / (1000 * 60 * 60 * 24));    
-        document.getElementById("faltan_dias").innerHTML = `¡Faltan ${d} días!`;
+        document.getElementById("faltan_dias").innerHTML = `¡Faltan ${d} días<br>para celebrar juntos!`;
     }, 1000);
 
     /*
