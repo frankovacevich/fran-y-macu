@@ -219,9 +219,21 @@
     * Calendario
     */
    function showFaltanDias(){
-        const fechaCasamiento = new Date('2024-01-20');
-        var d = Math.floor((fechaCasamiento - (new Date())) / (1000 * 60 * 60 * 24));    
-        document.getElementById("faltan_dias").innerHTML = `¡Faltan ${d} días<br>para celebrar juntos!`;
+        const fechaCasamiento = new Date('2024-01-21');
+        var d = Math.floor((fechaCasamiento - (new Date())) / (1000 * 60 * 60 * 24));
+        var text = '';
+        if(d > 1) {
+            text = `¡Faltan ${d} días<br>para celebrar juntos!`;
+        } else if(d === 1) {
+            text = `¡Falta 1 día<br>para celebrar juntos!`;
+        } else if(d === 0) {
+            text = `Es hoy!`;
+        } else {
+            text = `¡Gracias por venir!`
+        }
+        
+        document.getElementById("faltan_dias").innerHTML = text;
+        
     }
     showFaltanDias();
     setInterval(showFaltanDias, 1000);
